@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from item.models import *
 from .forms import *
+from django.contrib.auth import logout
 # Create your views here.
 def signup(request):
     if request.method=='POST':
@@ -21,3 +22,6 @@ def index(request):
 def contact(request):
     return render(request,'core/contact.html')
 
+def Logout(request):
+    logout(request)
+    return redirect('/')
